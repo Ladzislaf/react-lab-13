@@ -112,7 +112,7 @@ export default function OrderForm() {
 							<div>Count: {product.count}</div>
 							<div>Weight: {product.weight} g.</div>
 							Select count:
-							<input className='inp' type={'number'} style={{width: "70px"}} onChange={(e) => checkProdCount(e, product)}/> <br/>
+							<input className='inp' defaultValue={1} type={'number'} style={{width: "70px"}} onChange={(e) => checkProdCount(e, product)}/> <br/>
 							<input className={'btn'} type="button" value={'Delete'} onClick={() => deleteFromCart(product)}/>
 							{product.discount > 0 && <div className={'discount'}>-{product.discount}%</div>}
 						</div>

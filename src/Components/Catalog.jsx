@@ -8,8 +8,11 @@ import pineappleImageSrc from '../Images/pineapple.jpg'
 import cucumberImageSrc from '../Images/cucumber.jpg'
 import tomatoImageSrc from '../Images/tomato.jpg'
 import carrotImageSrc from '../Images/carrot.jpg'
+import {useSelector} from "react-redux";
 
 const Catalog = ({toggleModal}) => {
+    const cart = useSelector(state => state.cart)
+
     const [productsList, setProductsList] = useState([
         {
             id: 1,
@@ -21,7 +24,7 @@ const Catalog = ({toggleModal}) => {
             new: true,
             discount: 5,
 			weight: 150,
-			selected: 0,
+			selected: 1,
 			checked: false,
         },
         {
@@ -34,7 +37,7 @@ const Catalog = ({toggleModal}) => {
             new: true,
             discount: 10,
 			weight: 220,
-			selected: 0,
+			selected: 1,
 			checked: false,
         },
         {
@@ -47,7 +50,7 @@ const Catalog = ({toggleModal}) => {
             new: false,
             discount: 0,
 			weight: 180,
-			selected: 0,
+			selected: 1,
 			checked: false,
         },
         {
@@ -60,7 +63,7 @@ const Catalog = ({toggleModal}) => {
             new: false,
             discount: 7,
 			weight: 800,
-			selected: 0,
+			selected: 1,
 			checked: false,
         },
         {
@@ -73,7 +76,7 @@ const Catalog = ({toggleModal}) => {
             new: false,
             discount: 5,
 			weight: 670,
-			selected: 0,
+			selected: 1,
 			checked: false,
         },
         {
@@ -86,7 +89,7 @@ const Catalog = ({toggleModal}) => {
             new: false,
             discount: 0,
 			weight: 550,
-			selected: 0,
+			selected: 1,
 			checked: false,
         },
         {
@@ -99,7 +102,7 @@ const Catalog = ({toggleModal}) => {
             new: false,
             discount: 50,
 			weight: 530,
-			selected: 0,
+			selected: 1,
 			checked: false,
         },
     ])
@@ -179,7 +182,7 @@ const Catalog = ({toggleModal}) => {
                         <div>Count: {product.count}</div>
                         <div>Weight: {product.weight} g.</div>
                         {product.discount > 0 && <div className={'discount'}>-{product.discount}%</div>}
-                        <input className={'btn'} type="button" value={'Add to cart'} onClick={() => addToCart(product)}/>
+                        <input disabled={(product.count < 1) || cart.includes(product)} className={'btn'} type="button" value={'Add to cart'} onClick={() => addToCart(product)}/>
                     </div>
                 )
             })}
