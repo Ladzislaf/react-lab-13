@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/react-lab-13/static/css/main.b3b43ff5.css",
+    "main.js": "/react-lab-13/static/js/main.bcb69c33.js",
+    "static/media/pineapple.jpg": "/react-lab-13/static/media/pineapple.d5f52d846c47ea250dc8.jpg",
+    "static/media/banana.jpg": "/react-lab-13/static/media/banana.8ed9723c7d21e7ae0201.jpg",
+    "static/media/apple.jpg": "/react-lab-13/static/media/apple.33d8e6882c285da2d1d4.jpg",
+    "static/media/orange.jpg": "/react-lab-13/static/media/orange.b83c0907f38b5dbfb884.jpg",
+    "static/media/tomato.jpg": "/react-lab-13/static/media/tomato.5d24145a7b1f8132e516.jpg",
+    "static/media/cucumber.jpg": "/react-lab-13/static/media/cucumber.7efdc8382b70d9382e2a.jpg",
+    "index.html": "/react-lab-13/index.html",
+    "main.b3b43ff5.css.map": "/react-lab-13/static/css/main.b3b43ff5.css.map",
+    "main.bcb69c33.js.map": "/react-lab-13/static/js/main.bcb69c33.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3b43ff5.css",
+    "static/js/main.bcb69c33.js"
+  ]
+}
