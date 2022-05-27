@@ -97,6 +97,7 @@ export default function OrderForm() {
 	
   	return (
 		<div className='orderForm'>
+			<progress value={page} max={3}/> <br/>
 			{page === 1 && <>
 				<p>Summary price: {sumPrice.toFixed(2)} $</p> <br/>
 				<input className={'btn'} type="button" value={'Next'} onClick={nextWindowHandler}/>
