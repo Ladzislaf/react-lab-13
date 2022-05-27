@@ -35,10 +35,6 @@ export default function OrderForm() {
 		setSumWeight(weightSum)
 	}, [cart])
 
-	useEffect(() => {
-		console.log(checkedProdList)
-	}, [checkedProdList])
-
 	const checkProdCount = (e, product) => {
 		const count = e.target.value
 		// запрет на ввод большего количества, чем имеется
@@ -69,7 +65,9 @@ export default function OrderForm() {
 		setPage(prev => prev - 1)
 		if (page === 2) {
 			setSumPrice(0)
+			setSumWeight(0)
 			setCheckedProdList([])
+			dispatch({type: 'CLEAR_CART'})
 		}
 	}
 

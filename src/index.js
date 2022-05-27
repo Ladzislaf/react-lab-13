@@ -7,7 +7,6 @@ import App from './App'
 
 const defaultState = {
     cart: [],
-    users: [],
 }
 
 const reducer = (state = defaultState, action) => {
@@ -17,7 +16,9 @@ const reducer = (state = defaultState, action) => {
 		case 'REMOVE_PROD':
 			return {...state, cart: state.cart.filter((el) => {
 				return el.id !== action.payload
-			})}	
+			})}
+		case 'CLEAR_CART':
+			return {...state, cart:	[]}
 		case 'CHANGE_SELECTED_PROD':
 			let newCart = state.cart.slice()
 			newCart.forEach((el) => {
@@ -32,11 +33,6 @@ const reducer = (state = defaultState, action) => {
 					el.checked = action.payload.checked
 			})
 			return {...state, cart: newCartList}
-        case 'ADD_USER':
-            for (let i = 0; i < state.users.length; i++)
-                if (state.users[i].email === action.payload.email)
-                    return state
-            return {...state, users: [...state.users, action.payload]}
         default: return state
     }
 }
